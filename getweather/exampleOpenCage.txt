@@ -1,0 +1,382 @@
+https://api.opencagedata.com/geocode/v1/json?q=51.952659%2C+7.632473&pretty=1&no_annotations=1
+
+HTTP Status code: 200
+
+HTTP Headers:
+  Content-Type: application/json; charset=utf-8
+  Access-control-allow-origin: *
+  X-RateLimit-Limit: 2500
+  X-RateLimit-Remaining: 2499
+  X-RateLimit-Reset: 1579910400
+
+Content:
+{
+  "documentation": "https://opencagedata.com/api",
+  "licenses": [
+    {
+      "name": "see attribution guide",
+      "url": "https://opencagedata.com/credits"
+    }
+  ],
+  "rate": {
+    "limit": 2500,
+    "remaining": 2499,
+    "reset": 1579910400
+  },
+  "results": [
+    {
+      "annotations": {
+        "DMS": {
+          "lat": "28° 33' 0.96660'' N",
+          "lng": "81° 35' 33.35100'' W"
+        },
+        "FIPS": {
+          "county": "12095",
+          "state": "12"
+        },
+        "MGRS": "17RMM4203258304",
+        "Maidenhead": "EL98en82vb",
+        "Mercator": {
+          "x": -9082846.402,
+          "y": 3298111.98
+        },
+        "OSM": {
+          "edit_url": "https://www.openstreetmap.org/edit?relation=117701#map=17/28.55027/-81.59260",
+          "note_url": "https://www.openstreetmap.org/note/new#map=17/28.55027/-81.59260&layers=N",
+          "url": "https://www.openstreetmap.org/?mlat=28.55027&mlon=-81.59260#map=17/28.55027/-81.59260"
+        },
+        "UN_M49": {
+          "regions": {
+            "AMERICAS": "019",
+            "NORTHERN_AMERICA": "021",
+            "US": "840",
+            "WORLD": "001"
+          },
+          "statistical_groupings": [
+            "MEDC"
+          ]
+        },
+        "callingcode": 1,
+        "currency": {
+          "alternate_symbols": [
+            "US$"
+          ],
+          "decimal_mark": ".",
+          "disambiguate_symbol": "US$",
+          "html_entity": "$",
+          "iso_code": "USD",
+          "iso_numeric": "840",
+          "name": "United States Dollar",
+          "smallest_denomination": 1,
+          "subunit": "Cent",
+          "subunit_to_unit": 100,
+          "symbol": "$",
+          "symbol_first": 1,
+          "thousands_separator": ","
+        },
+        "flag": "🇺🇸",
+        "geohash": "djjfrm6j6ev9qt79cr3n",
+        "qibla": 55.17,
+        "roadinfo": {
+          "drive_on": "right",
+          "speed_in": "mph"
+        },
+        "sun": {
+          "rise": {
+            "apparent": 1579868340,
+            "astronomical": 1579863420,
+            "civil": 1579866840,
+            "nautical": 1579865100
+          },
+          "set": {
+            "apparent": 1579906680,
+            "astronomical": 1579825200,
+            "civil": 1579908180,
+            "nautical": 1579909920
+          }
+        },
+        "timezone": {
+          "name": "America/New_York",
+          "now_in_dst": 0,
+          "offset_sec": -18000,
+          "offset_string": "-0500",
+          "short_name": "EST"
+        },
+        "what3words": {
+          "words": "ships.fluffy.decibel"
+        },
+        "wikidata": "Q2152414"
+      },
+      "bounds": {
+        "northeast": {
+          "lat": 28.595551,
+          "lng": -81.557508
+        },
+        "southwest": {
+          "lat": 28.4966394,
+          "lng": -81.657407
+        }
+      },
+      "components": {
+        "ISO_3166-1_alpha-2": "US",
+        "ISO_3166-1_alpha-3": "USA",
+        "_category": "place",
+        "_type": "city",
+        "city": "Winter Garden",
+        "continent": "North America",
+        "country": "United States of America",
+        "country_code": "us",
+        "county": "Orange County",
+        "state": "Florida",
+        "state_code": "FL"
+      },
+      "confidence": 6,
+      "formatted": "Winter Garden, FL, United States of America",
+      "geometry": {
+        "lat": 28.5502685,
+        "lng": -81.5925975
+      }
+    },
+    {
+      "annotations": {
+        "DMS": {
+          "lat": "28° 33' 56.46168'' N",
+          "lng": "81° 35' 8.30508'' W"
+        },
+        "FIPS": {
+          "county": "12095",
+          "state": "12"
+        },
+        "MGRS": "17RMM4272160008",
+        "Maidenhead": "EL98en95rs",
+        "Mercator": {
+          "x": -9082071.934,
+          "y": 3300055.6
+        },
+        "OSM": {
+          "edit_url": "https://www.openstreetmap.org/edit?node=945781113#map=17/28.56568/-81.58564",
+          "note_url": "https://www.openstreetmap.org/note/new#map=17/28.56568/-81.58564&layers=N",
+          "url": "https://www.openstreetmap.org/?mlat=28.56568&mlon=-81.58564#map=17/28.56568/-81.58564"
+        },
+        "UN_M49": {
+          "regions": {
+            "AMERICAS": "019",
+            "NORTHERN_AMERICA": "021",
+            "US": "840",
+            "WORLD": "001"
+          },
+          "statistical_groupings": [
+            "MEDC"
+          ]
+        },
+        "callingcode": 1,
+        "currency": {
+          "alternate_symbols": [
+            "US$"
+          ],
+          "decimal_mark": ".",
+          "disambiguate_symbol": "US$",
+          "html_entity": "$",
+          "iso_code": "USD",
+          "iso_numeric": "840",
+          "name": "United States Dollar",
+          "smallest_denomination": 1,
+          "subunit": "Cent",
+          "subunit_to_unit": 100,
+          "symbol": "$",
+          "symbol_first": 1,
+          "thousands_separator": ","
+        },
+        "flag": "🇺🇸",
+        "geohash": "djjfx2pphv3m6bmutk48",
+        "qibla": 55.17,
+        "roadinfo": {
+          "drive_on": "right",
+          "speed_in": "mph"
+        },
+        "sun": {
+          "rise": {
+            "apparent": 1579868340,
+            "astronomical": 1579863420,
+            "civil": 1579866840,
+            "nautical": 1579865100
+          },
+          "set": {
+            "apparent": 1579906680,
+            "astronomical": 1579825200,
+            "civil": 1579908180,
+            "nautical": 1579909920
+          }
+        },
+        "timezone": {
+          "name": "America/New_York",
+          "now_in_dst": 0,
+          "offset_sec": -18000,
+          "offset_string": "-0500",
+          "short_name": "EST"
+        },
+        "what3words": {
+          "words": "jaguar.chipmunk.photography"
+        }
+      },
+      "bounds": {
+        "northeast": {
+          "lat": 28.5856838,
+          "lng": -81.5656403
+        },
+        "southwest": {
+          "lat": 28.5456838,
+          "lng": -81.6056403
+        }
+      },
+      "components": {
+        "ISO_3166-1_alpha-2": "US",
+        "ISO_3166-1_alpha-3": "USA",
+        "_category": "place",
+        "_type": "neighbourhood",
+        "continent": "North America",
+        "country": "United States of America",
+        "country_code": "us",
+        "county": "Orange County",
+        "state": "Florida",
+        "state_code": "FL",
+        "suburb": "Winter Garden"
+      },
+      "confidence": 7,
+      "formatted": "Winter Garden, Orange County, FL, United States of America",
+      "geometry": {
+        "lat": 28.5656838,
+        "lng": -81.5856403
+      }
+    },
+    {
+      "annotations": {
+        "DMS": {
+          "lat": "28° 33' 53.37576'' N",
+          "lng": "81° 35' 10.97808'' W"
+        },
+        "FIPS": {
+          "county": "12095",
+          "state": "12"
+        },
+        "MGRS": "17RMM4264859914",
+        "Maidenhead": "EL98en95pn",
+        "Mercator": {
+          "x": -9082154.589,
+          "y": 3299947.514
+        },
+        "OSM": {
+          "edit_url": "https://www.openstreetmap.org/edit?node=673170567#map=17/28.56483/-81.58638",
+          "note_url": "https://www.openstreetmap.org/note/new#map=17/28.56483/-81.58638&layers=N",
+          "url": "https://www.openstreetmap.org/?mlat=28.56483&mlon=-81.58638#map=17/28.56483/-81.58638"
+        },
+        "UN_M49": {
+          "regions": {
+            "AMERICAS": "019",
+            "NORTHERN_AMERICA": "021",
+            "US": "840",
+            "WORLD": "001"
+          },
+          "statistical_groupings": [
+            "MEDC"
+          ]
+        },
+        "callingcode": 1,
+        "currency": {
+          "alternate_symbols": [
+            "US$"
+          ],
+          "decimal_mark": ".",
+          "disambiguate_symbol": "US$",
+          "html_entity": "$",
+          "iso_code": "USD",
+          "iso_numeric": "840",
+          "name": "United States Dollar",
+          "smallest_denomination": 1,
+          "subunit": "Cent",
+          "subunit_to_unit": 100,
+          "symbol": "$",
+          "symbol_first": 1,
+          "thousands_separator": ","
+        },
+        "flag": "🇺🇸",
+        "geohash": "djjfx2nd5mxey5wjzmr5",
+        "qibla": 55.17,
+        "roadinfo": {
+          "drive_on": "right",
+          "road": "Joiner Street",
+          "speed_in": "mph"
+        },
+        "sun": {
+          "rise": {
+            "apparent": 1579868340,
+            "astronomical": 1579863420,
+            "civil": 1579866840,
+            "nautical": 1579865100
+          },
+          "set": {
+            "apparent": 1579906680,
+            "astronomical": 1579825200,
+            "civil": 1579908180,
+            "nautical": 1579909920
+          }
+        },
+        "timezone": {
+          "name": "America/New_York",
+          "now_in_dst": 0,
+          "offset_sec": -18000,
+          "offset_string": "-0500",
+          "short_name": "EST"
+        },
+        "what3words": {
+          "words": "shoelace.anybody.combo"
+        }
+      },
+      "bounds": {
+        "northeast": {
+          "lat": 28.5648766,
+          "lng": -81.5863328
+        },
+        "southwest": {
+          "lat": 28.5647766,
+          "lng": -81.5864328
+        }
+      },
+      "components": {
+        "ISO_3166-1_alpha-2": "US",
+        "ISO_3166-1_alpha-3": "USA",
+        "_category": "transportation",
+        "_type": "railway",
+        "continent": "North America",
+        "country": "United States of America",
+        "country_code": "us",
+        "county": "Orange County",
+        "railway": "Winter Garden",
+        "road": "Joiner Street",
+        "state": "Florida",
+        "state_code": "FL",
+        "suburb": "Winter Garden"
+      },
+      "confidence": 9,
+      "formatted": "Winter Garden, Joiner Street, Winter Garden, FL, United States of America",
+      "geometry": {
+        "lat": 28.5648266,
+        "lng": -81.5863828
+      }
+    }
+  ],
+  "status": {
+    "code": 200,
+    "message": "OK"
+  },
+  "stay_informed": {
+    "blog": "https://blog.opencagedata.com",
+    "twitter": "https://twitter.com/opencagedata"
+  },
+  "thanks": "For using an OpenCage API",
+  "timestamp": {
+    "created_http": "Fri, 24 Jan 2020 05:16:44 GMT",
+    "created_unix": 1579843004
+  },
+  "total_results": 3
+}
