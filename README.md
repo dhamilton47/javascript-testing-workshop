@@ -5,14 +5,14 @@
 
 <ol>
     <li>
-        I went to a Meetup Workshop presentation led by Phil Palmieri.  He presented a simple sketch of a project to learn testing using Jest in the Nodejs environment.
+        I went to a Meetup Workshop presentation led by Phil Palmieri.  He presented a simple sketch of a project to learn testing using Jest in the Node.js environment.
     </li>
     <ol>
         <li type="a">
             Hit the OpenCage API to retrieve the latitude and longitude of a location.
         </li>
         <li type="a">
-            Turn the retrived data around and hit the DarkSky API to find the weather at that same location.
+            Turn the retrieved data around and hit the DarkSky API to find the weather at that same location.
         </li>
     </ol>
     <li>
