@@ -19,7 +19,9 @@ Prior to further research and development, my thoughts are:
 1. The OpenCage API response can contain zero or more entries.  How do we handle/process the result?
 
    a. Zero responses - is it an error result or an empty array?  Is there a difference in handling either way?
+
    b. One response is straight forward.
+   
    c. Multiple responses - the response from OpenCage is dependent on the level of specificity (think Springfield vs. Springfield, MO USA).  But it can also return multiple values for a fairly well defined location (e.g. Winter Garden, FL USA return 3 responses).  How do we test and structure the response we are going to pass the the DarkSky API?
 
 2. The DarkSky API requires latitude and longitude which we cull from the OpenCage response.  Need to make sure we form the API call correctly.
