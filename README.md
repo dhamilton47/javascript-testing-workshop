@@ -4,9 +4,8 @@
 #### Intro
 
 1. Went to our Meetup Workshop presentation led by Phil Palmieri.  He presented a simple sketch of a project to learn testing using Jest in the Nodejs environment.
-
-a. Hit the OpenCage API to retrieve the latitude and longitude of a location.
-b. Turn the retrived data around and hit the DarkSky API to find the weather at that same location.
+   a. Hit the OpenCage API to retrieve the latitude and longitude of a location.
+   b. Turn the retrived data around and hit the DarkSky API to find the weather at that same location.
 
 2. During the presentation we managed to get part way through the testing to develop the first API call (mainly a result of me being slow).
 3. We were challenged to move the concept and development forward.
