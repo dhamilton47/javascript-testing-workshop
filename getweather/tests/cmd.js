@@ -3,7 +3,7 @@ const concat = require('concat-stream')
 
 function createProcess(processPath, args = [], env = null) {
     args = [processPath].concat(args)
-    console.log(args)
+  
     return spawn('node', args, {
         env: Object.assign(
             {
