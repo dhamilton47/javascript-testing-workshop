@@ -1,22 +1,16 @@
 const nock = require('nock')
-const { getLocation } = require('../weather')
+const { getWeather } = require('../weather')
 
-describe('env conf works', () => {
-    test('it works', () => {
-        expect(process.env.TESTING).toBe('TRUE')  
-    })
-})
-
-describe('location connection', () => {
-    let openCage
-    let openCageQuery = {
-        key: process.env.OPENCAGE_KEY
+describe('weather connection', () => {
+    let darkSky
+    let darkSkyQuery = {
+        key: process.env.DARKSKY_KEY
     }
     
     beforeEach(() =>{
         nock.disableNetConnect()
         nock.enableNetConnect(/^(127\.0\.0\.1|localhost)/)
-        openCage = nock(process.env.OPENCAGE_URL)
+        darkSky = nock(process.env.DARKSKY_URL)
             .get('/json')
     })
 
@@ -26,7 +20,7 @@ describe('location connection', () => {
     })
 
     test('city is sent properly', async () => {
-        openCage.query({ ...openCageQuery, q: 'Orlando' })
+        darkSky.query({ ...darkSkyQuery, q: 'Orlando' })
             .reply(200, { hello: 'test'})
 
         const response = true

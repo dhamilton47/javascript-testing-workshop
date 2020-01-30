@@ -1,12 +1,6 @@
 const nock = require('nock')
 const { getLocation } = require('../location')
 
-describe('env conf works', () => {
-    test('it works', () => {
-        expect(process.env.TESTING).toBe('TRUE')  
-    })
-})
-
 describe('location connection', () => {
     let openCage
     let openCageQuery = {
@@ -25,14 +19,14 @@ describe('location connection', () => {
         nock.restore()
     })
 
-    test('city is sent properly', async () => {
-        openCage.query({ ...openCageQuery, q: 'Orlando' })
+    test('location string is sent properly', async () => {
+        openCage.query({ ...openCageQuery, q: 'Orlando,FL,USA' })
             .reply(200, { hello: 'test'})
 
-        const response = await getLocation('Orlando')
+        const response = await getLocation('Orlando,FL,USA')
+
         const responseObj = JSON.parse(response)
+
         expect(responseObj.hello).toBe('test')
-        console.log(response.statusCode)
     })
 })
-

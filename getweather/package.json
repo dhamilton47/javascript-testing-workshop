@@ -25,6 +25,7 @@
     "request-promise": "^4.2.5"
   },
   "devDependencies": {
+    "concat-stream": "^2.0.0",
     "jest": "^24.9.0",
     "nock": "^11.7.2"
   },
