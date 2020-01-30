@@ -18,9 +18,6 @@ describe('Command line', () => {
         console.log('length of response is', response.length)
         console.log('The type for response is', typeof(response))
 
-        const responseObj = JSON.parse(response)
-
-        expect(responseObj).toBe('Orlando')
- //       expect(response).toBe('Orlando')
+        expect(response).toBe('Orlando')
     })
 })
