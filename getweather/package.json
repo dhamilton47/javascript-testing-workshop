@@ -18,16 +18,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "^4.1.0",
+    "commander": "^4.1.1",
     "dotenv": "^8.2.0",
-    "promise": "^8.0.3",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.5"
+    "promise": "^8.1.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
   },
   "devDependencies": {
     "concat-stream": "^2.0.0",
     "jest": "^24.9.0",
-    "nock": "^11.7.2"
+    "nock": "^11.9.1"
   },
   "description": ""
 }
