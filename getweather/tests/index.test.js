@@ -1,23 +1,41 @@
-require('jest')
-const cmd = require('./cmd')
+require('jest');
+const { EOL } = require('os');
+const cmd = require('./cmd');
+const nock = require('nock');
+const defaultOptions = require('./helpers/nock');
 
 describe('env conf works', () => {
-    test('it works', () => {
-        expect(process.env.TESTING).toBe('TRUE')  
-    })
-})
+  test('it works', () => {
+    expect(process.env.TESTING).toBe('TRUE');
+  });
+});
 
-describe('Command line', () => {
-    test('requires a city', async () => {
-        const response = await cmd.execute(
-            './index.js',
-            ['-c', 'Orlando']
-        )
-        
-        console.log('response =', response)
-        console.log('length of response is', response.length)
-        console.log('The type for response is', typeof(response))
+describe('The Weather CLI', () => {
+  test('returns a 7-day forecast', async () => {
+    // nock.recorder.rec();
 
-        expect(response).toBe('Orlando')
-    })
+    nock.back.setMode('record');
+    
+    const { nockDone } = await nock.back(
+      'user-data.json',
+      defaultOptions,
+    );
+
+    const response = await cmd.execute(
+      '../getweather/index.js',
+      ['-c', 'Orlando']
+    );
+    console.log(response);
+    // const responseObj = JSON.parse(response);
+
+    expect(response).toEqual(
+      expect.objectContaining({
+        results: expect.any(Object),
+      }),
+    );
+
+    nockDone();
+    nock.back.setMode('wild');
+    // nock.recorder.play();
+  });
 })

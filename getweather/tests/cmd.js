@@ -25,6 +25,7 @@ function execute(processPath, args = [], opts = {}) {
         })
 
         childProcess.on('error', reject)
+        
         childProcess.stdout.pipe(
             concat(result => {
                 resolve(result.toString())

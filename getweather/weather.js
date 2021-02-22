@@ -1,7 +1,7 @@
-const { DARKSKY_KEY, DARKSKY_URL } = process.env
-const rp = require('request-promise')
+const { DARKSKY_KEY, DARKSKY_URL } = process.env;
+const rp = require('request-promise');
 
-module.exports.getWeather = async (city) => {
-    const url = `${DARKSKY_URL}/json?key=${DARKSKY_KEY}`
-    return await rp(`${url}&q=${city}`)
-}
+module.exports.getWeather = async (latitude,longitude) => {
+  const url = `${DARKSKY_URL}/${DARKSKY_KEY}`;
+  return await rp(`${url}/${latitude},${longitude}?exclude=minutely,hourly,alerts,flags`);
+};

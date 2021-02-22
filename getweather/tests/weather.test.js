@@ -1,32 +1,33 @@
-const nock = require('nock')
-const { getWeather } = require('../weather')
+const nock = require('nock');
+const { getWeather } = require('../weather');
 
 describe('weather connection', () => {
-    let darkSky
-    let darkSkyQuery = {
-        key: process.env.DARKSKY_KEY
-    }
-    
-    beforeEach(() =>{
-        nock.disableNetConnect()
-        nock.enableNetConnect(/^(127\.0\.0\.1|localhost)/)
-        darkSky = nock(process.env.DARKSKY_URL)
-            .get('/json')
-    })
+  let darkSky;
+  let darkSkyKey = {
+    key: process.env.DARKSKY_KEY
+  };
+  
+  afterAll(() => {
+    nock.restore();
+  });
 
-    afterEach( () => {
-        nock.cleanAll()
-        nock.restore()
-    })
+  beforeEach(() => {
+    nock.disableNetConnect();
+    nock.enableNetConnect(/^(127\.0\.0\.1|localhost)/);
+    darkSky = nock(process.env.DARKSKY_URL);
+  });
 
-    test('city is sent properly', async () => {
-        darkSky.query({ ...darkSkyQuery, q: 'Orlando' })
-            .reply(200, { hello: 'test'})
+  afterEach(() => {
+    nock.cleanAll();
+  });
 
-        const response = true
- //       const response = await getLocation('Orlando')
- //       const responseObj = JSON.parse(response)
-        expect(response).toBe(true)
-    })
-})
+  test('coordinates are sent properly', async () => {
+    darkSky.get(`/${darkSkyKey.key}/0,0?exclude=minutely,hourly,alerts,flags`)
+      .reply(200, { hello: 'test'});
 
+    const response = await getWeather(0,0);
+    const responseObj = JSON.parse(response);
+
+    expect(responseObj.hello).toBe('test');
+  });
+});
