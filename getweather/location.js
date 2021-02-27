@@ -1,7 +1,6 @@
-const { OPENCAGE_KEY, OPENCAGE_URL } = process.env;
 const rp = require('request-promise');
 
-module.exports.getLocation = async (city) => {
-  const url = `${OPENCAGE_URL}/json?key=${OPENCAGE_KEY}`;
-  return await rp(`${url}&q=${city}&limit=1`);
+module.exports.getLocation = async (location, url, key) => {
+  const apiUrl = `${url}/json?key=${key}`;
+  return await rp(`${apiUrl}&q=${location}&limit=1`);
 };

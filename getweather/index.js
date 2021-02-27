@@ -5,6 +5,7 @@ const program = require('commander');
 const { getLocation } = require('./location');
 const { getWeather } = require('./weather');
 const nock = require('nock');
+const { OPENCAGE_KEY, OPENCAGE_URL } = process.env;
 
 
 program.option('-c, --city <string>', 'what is your city');
@@ -17,82 +18,37 @@ if(!process.argv.slice(2).length) {
 
 // Application below
 
-const run = async (city) => {
+const run = async city => {
 
+  // get location coordinates
   try {
-//nock.recorder.rec()
-    // get location coordinates
-    const cityData = await getLocation(city);
-
+    const cityData = await getLocation(city, OPENCAGE_URL, OPENCAGE_KEY);
     const cityDataObj = JSON.parse(cityData).results[0];
-
-    const { lat, lng } = cityDataObj.geometry
-    
-    // get forecast data
-    const forecastData = await getWeather(lat, lng);
-
-    const forecastDataObj = JSON.parse(forecastData);
-
-    // Format results
-   
-    //Current
-    // CLI
-    console.log(
-      'Current Time:',
-      format(
-        addSeconds(
-          new Date(1970, 0, 1-1, 12+2+5, 0, 0),
-          forecastDataObj.currently.time
-        ),
-        'h:mm bbb'
-      )
-    );
-    console.log('Todays Forecast:',forecastDataObj.currently.summary);
-    console.log('Current Temperature:',forecastDataObj.currently.temperature);
-    console.log('Icon:',forecastDataObj.currently.icon,'\n');
-
-    // Webpage
-    
-    //Daily
-    // CLI
-    forecastDataObj.daily.data.forEach(element => {
-      console.log(
-        'Day:',
-        format(
-          addSeconds(
-            new Date(1970, 0, 1, 12+2, 0, 0),
-            element.time
-          ),
-          'MMMM dd, yyyy'
-        )
-      );
-      console.log('Weather:',element.summary);
-      console.log('Icon:',element.icon);
-      console.log('High:',element.temperatureHigh);
-      console.log('Low:',element.temperatureLow,'\n');
-    });
-
-    // Webpage
-
-
-    // Acknowledgement
-//nock.recorder.play()
-    console.log('This application is powered by the OpenCage API and the Dark Sky API\n')
-    console.log('https://opencagedata.com/api')
-    console.log('https://darksky.net/dev\n\n')
-  } catch(e) {
-    console.error(e);
+    const { lat, lng } = cityDataObj.geometry;
+    console.log(lat, lng);
+    //return lat, lng;
+  } catch (e) {
+    console.log('Error in the OpenCage API call.');
   }
-}
-
+  //let forecastDataObj;
+  // get forecast data
+  /*
+  try {
+    const forecastData = await getWeather(lat, lng);
+    forecastDataObj = JSON.parse(forecastData);
+    //return forecastDataObj;
+  } catch (e) {
+    console.log('Error in the DarkSky API call.')
+  }
+  return forecastDataObj;
+};
+*/
+};
 //if(program.city != '') {
-  //  console.log(program.city);
- run(program.city);
-  //console.log(coordinates);
-  //let coordinatesObj = JSON.parse(coordinates).results[0].geometry;
 
-  //console.log(coordinatesObj);
-   
+//forecastDataObj = run(program.city);
+run(program.city);
+//console.log(forecastDataObj);
 //} else {
 //  return null;
-//}
+//
