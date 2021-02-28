@@ -4,6 +4,7 @@ const defaultOptions = require('./helpers/nock');
 const { OPENCAGE_KEY, OPENCAGE_URL } = process.env;
 const location = 'Orlando,FL,USA';
 const locationFormatted = 'Orlando, Florida, United States of America';
+
 /*
   What needs to be tested?
     Making a connection - 200, OK
@@ -11,6 +12,7 @@ const locationFormatted = 'Orlando, Florida, United States of America';
     How to handle zero responses - 200, OK, throw error noLocationError location not found
     How to respond to errors and the impact on the overall application
 */
+
 describe('location connection', () => {
   afterAll(() => nock.restore());
   afterEach(() => nock.cleanAll());
