@@ -1,33 +1,49 @@
 const nock = require('nock');
 const { getWeather } = require('../weather');
+const defaultOptions = require('./helpers/nock');
 
 describe('weather connection', () => {
-  let darkSky;
-  let darkSkyKey = {
-    key: process.env.DARKSKY_KEY
-  };
-  
-  afterAll(() => {
-    nock.restore();
-  });
+  afterAll(() => nock.restore());
+  afterEach(() => nock.cleanAll());
 
-  beforeEach(() => {
-    nock.disableNetConnect();
-    nock.enableNetConnect(/^(127\.0\.0\.1|localhost)/);
-    darkSky = nock(process.env.DARKSKY_URL);
-  });
+  test('request sent properly', async () => {
+    nock.back.setMode('record');
 
-  afterEach(() => {
-    nock.cleanAll();
-  });
+    const { nockDone } = await nock.back(
+      'weather-good.json',
+      defaultOptions,
+    );
 
-  test('coordinates are sent properly', async () => {
-    darkSky.get(`/${darkSkyKey.key}/0,0?exclude=minutely,hourly,alerts,flags`)
-      .reply(200, { hello: 'test'});
-
-    const response = await getWeather(0,0);
+    const response = await getWeather({lat: 28.5421109, lng: -81.3790304});
     const responseObj = JSON.parse(response);
 
-    expect(responseObj.hello).toBe('test');
+    expect(responseObj).toEqual(
+      expect.objectContaining({
+        currently: expect.objectContaining({
+          "time": expect.any(Number),
+          "summary": expect.any(String),
+          "icon": expect.any(String),
+          "temperature": expect.any(Number),
+        }),
+        
+        daily: {
+          "summary": expect.any(String),
+          "icon": expect.any(String),
+          "data": expect.arrayContaining([
+            expect.any(Object),
+            expect.any(Object),
+            expect.any(Object),
+            expect.any(Object),
+            expect.any(Object),
+            expect.any(Object),
+            expect.any(Object),
+            expect.any(Object),
+          ]),
+        },
+      }),
+    );
+    
+    nockDone();
+    nock.back.setMode('wild');
   });
 });
