@@ -106,13 +106,8 @@ describe('location connection', () => {
 });
 
 describe('OpenCage API Errors', () => {
-    let openCage;
-    let openCageQuery = {
-      key: process.env.OPENCAGE_KEY
-    };
-
-    afterAll(() => nock.restore());
-    afterEach(() => nock.cleanAll());
+  afterAll(() => nock.restore());
+  afterEach(() => nock.cleanAll());
 
   test('a missing query will return a 400 error', async () => {
     nock.back.setMode('record');
