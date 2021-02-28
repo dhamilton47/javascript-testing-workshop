@@ -1,0 +1,181 @@
+[
+    {
+        "scope": "https://api.opencagedata.com:443",
+        "method": "GET",
+        "path": "/geocode/v1/json?key=fake&q=Orlando,FL,USA&limit=1",
+        "body": "",
+        "status": 200,
+        "response": {
+            "documentation": "https://opencagedata.com/api",
+            "licenses": [
+                {
+                    "name": "see attribution guide",
+                    "url": "https://opencagedata.com/credits"
+                }
+            ],
+            "rate": {
+                "limit": 2500,
+                "remaining": 2475,
+                "reset": 1614211200
+            },
+            "results": [
+                {
+                    "annotations": {
+                        "DMS": {
+                            "lat": "28° 32' 31.59924'' N",
+                            "lng": "81° 22' 44.50944'' W"
+                        },
+                        "FIPS": {
+                            "county": "12095",
+                            "state": "12"
+                        },
+                        "MGRS": "17RMM6292057315",
+                        "Maidenhead": "EL98hn40mc",
+                        "Mercator": {
+                            "x": -9059072.225,
+                            "y": 3297083.555
+                        },
+                        "OSM": {
+                            "edit_url": "https://www.openstreetmap.org/edit?relation=1128379#map=17/28.54211/-81.37903",
+                            "note_url": "https://www.openstreetmap.org/note/new#map=17/28.54211/-81.37903&layers=N",
+                            "url": "https://www.openstreetmap.org/?mlat=28.54211&mlon=-81.37903#map=17/28.54211/-81.37903"
+                        },
+                        "UN_M49": {
+                            "regions": {
+                                "AMERICAS": "019",
+                                "NORTHERN_AMERICA": "021",
+                                "US": "840",
+                                "WORLD": "001"
+                            },
+                            "statistical_groupings": [
+                                "MEDC"
+                            ]
+                        },
+                        "callingcode": 1,
+                        "currency": {
+                            "alternate_symbols": [
+                                "US$"
+                            ],
+                            "decimal_mark": ".",
+                            "disambiguate_symbol": "US$",
+                            "html_entity": "$",
+                            "iso_code": "USD",
+                            "iso_numeric": "840",
+                            "name": "United States Dollar",
+                            "smallest_denomination": 1,
+                            "subunit": "Cent",
+                            "subunit_to_unit": 100,
+                            "symbol": "$",
+                            "symbol_first": 1,
+                            "thousands_separator": ","
+                        },
+                        "flag": "🇺🇸",
+                        "geohash": "djn4k5vtg5hg7jvxhbqu",
+                        "qibla": 55.3,
+                        "roadinfo": {
+                            "drive_on": "right",
+                            "speed_in": "mph"
+                        },
+                        "sun": {
+                            "rise": {
+                                "apparent": 1614167760,
+                                "astronomical": 1614163080,
+                                "civil": 1614166320,
+                                "nautical": 1614164700
+                            },
+                            "set": {
+                                "apparent": 1614208920,
+                                "astronomical": 1614127200,
+                                "civil": 1614210300,
+                                "nautical": 1614125580
+                            }
+                        },
+                        "timezone": {
+                            "name": "America/New_York",
+                            "now_in_dst": 0,
+                            "offset_sec": -18000,
+                            "offset_string": "-0500",
+                            "short_name": "EST"
+                        },
+                        "what3words": {
+                            "words": "figs.bubbles.rear"
+                        },
+                        "wikidata": "Q49233"
+                    },
+                    "bounds": {
+                        "northeast": {
+                            "lat": 28.614283,
+                            "lng": -81.2275862
+                        },
+                        "southwest": {
+                            "lat": 28.3480634,
+                            "lng": -81.5075377
+                        }
+                    },
+                    "components": {
+                        "ISO_3166-1_alpha-2": "US",
+                        "ISO_3166-1_alpha-3": "USA",
+                        "_category": "place",
+                        "_type": "city",
+                        "city": "Orlando",
+                        "continent": "North America",
+                        "country": "United States",
+                        "country_code": "us",
+                        "county": "Orange County",
+                        "state": "Florida",
+                        "state_code": "FL"
+                    },
+                    "confidence": 4,
+                    "formatted": "Orlando, Florida, United States of America",
+                    "geometry": {
+                        "lat": 28.5421109,
+                        "lng": -81.3790304
+                    }
+                }
+            ],
+            "status": {
+                "code": 200,
+                "message": "OK"
+            },
+            "stay_informed": {
+                "blog": "https://blog.opencagedata.com",
+                "twitter": "https://twitter.com/OpenCage"
+            },
+            "thanks": "For using an OpenCage API",
+            "timestamp": {
+                "created_http": "Wed, 24 Feb 2021 10:13:07 GMT",
+                "created_unix": 1614161587
+            },
+            "total_results": 1
+        },
+        "rawHeaders": [
+            "date",
+            "Wed, 24 Feb 2021 10:13:07 GMT",
+            "server",
+            "Apache",
+            "access-control-allow-origin",
+            "*",
+            "x-ratelimit-limit",
+            "2500",
+            "x-ratelimit-remaining",
+            "2475",
+            "x-ratelimit-reset",
+            "1614211200",
+            "vary",
+            "Accept-Encoding",
+            "x-frame-options",
+            "DENY",
+            "x-xss-protection",
+            "1; mode=block",
+            "transfer-encoding",
+            "chunked",
+            "content-type",
+            "application/json; charset=utf-8",
+            "strict-transport-security",
+            "max-age=31536000; includeSubDomains; preload",
+            "connection",
+            "close"
+        ],
+        "responseIsBinary": false
+    }
+]

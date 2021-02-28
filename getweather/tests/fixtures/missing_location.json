@@ -1,0 +1,67 @@
+[
+    {
+        "scope": "https://api.opencagedata.com:443",
+        "method": "GET",
+        "path": "/geocode/v1/json?key=fake&q=&limit=1",
+        "body": "",
+        "status": 200,
+        "response": {
+            "documentation": "https://opencagedata.com/api",
+            "licenses": [
+                {
+                    "name": "see attribution guide",
+                    "url": "https://opencagedata.com/credits"
+                }
+            ],
+            "rate": {
+                "limit": 2500,
+                "remaining": 2474,
+                "reset": 1614211200
+            },
+            "results": [],
+            "status": {
+                "code": 400,
+                "message": "missing or bad query"
+            },
+            "stay_informed": {
+                "blog": "https://blog.opencagedata.com",
+                "twitter": "https://twitter.com/OpenCage"
+            },
+            "thanks": "For using an OpenCage API",
+            "timestamp": {
+                "created_http": "Wed, 24 Feb 2021 10:13:08 GMT",
+                "created_unix": 1614161588
+            },
+            "total_results": 0
+        },
+        "rawHeaders": [
+            "date",
+            "Wed, 24 Feb 2021 10:13:08 GMT",
+            "server",
+            "Apache",
+            "access-control-allow-origin",
+            "*",
+            "x-ratelimit-limit",
+            "2500",
+            "x-ratelimit-remaining",
+            "2474",
+            "x-ratelimit-reset",
+            "1614211200",
+            "vary",
+            "Accept-Encoding",
+            "x-frame-options",
+            "DENY",
+            "x-xss-protection",
+            "1; mode=block",
+            "transfer-encoding",
+            "chunked",
+            "content-type",
+            "application/json; charset=utf-8",
+            "strict-transport-security",
+            "max-age=31536000; includeSubDomains; preload",
+            "connection",
+            "close"
+        ],
+        "responseIsBinary": false
+    }
+]
