@@ -1,10 +1,9 @@
 require('dotenv').config();
-const addSeconds = require('date-fns/addSeconds');
-const format = require('date-fns/format');
 const program = require('commander');
 const { getLocation } = require('./location');
 const { getWeather } = require('./weather');
 const nock = require('nock');
+const { outputToConsole } = require("./outputToConsole");
 const { OPENCAGE_KEY, OPENCAGE_URL } = process.env;
 
 
@@ -47,38 +46,8 @@ const run = async city => {
 
   //  Current
   
-  console.log(
-    'Current Time:',
-    format(
-      addSeconds(
-        new Date(1970, 0, 1-1, 12+2+5, 0, 0),
-        forecastDataObj.currently.time
-      ),
-      'h:mm bbb'
-    )
-  );
-  console.log('Todays Forecast:',forecastDataObj.currently.summary);
-  console.log('Current Temperature:',forecastDataObj.currently.temperature);
-  console.log('Icon:',forecastDataObj.currently.icon,'\n');
+  outputToConsole(forecastDataObj);
 
-  //  Daily
-
-  forecastDataObj.daily.data.forEach(element => {
-    console.log(
-      'Day:',
-      format(
-        addSeconds(
-          new Date(1970, 0, 1, 12+2, 0, 0),
-          element.time
-        ),
-        'MMMM dd, yyyy'
-      )
-    );
-    console.log('Weather:',element.summary);
-    console.log('Icon:',element.icon);
-    console.log('High:',element.temperatureHigh);
-    console.log('Low:',element.temperatureLow,'\n');
-  });
 
   // Webpage
 
@@ -86,20 +55,11 @@ const run = async city => {
 
   //  Daily
 
-  // Acknowledgement
-
-  console.log('This application is powered by the OpenCage API and the Dark Sky API\n')
-  console.log('https://opencagedata.com/api')
-  console.log('https://darksky.net/dev\n\n')
-
-
 };
 
 //if(program.city != '') {
 
 //forecastDataObj = run(program.city);
 run(program.city);
-//console.log(forecastDataObj);
-//} else {
-//  return null;
-//
+
+
