@@ -42,10 +42,6 @@ const run = async city => {
 
   // Format results
 
-  // CLI
-
-  //  Current
-  
   outputToConsole(forecastDataObj);
 
 

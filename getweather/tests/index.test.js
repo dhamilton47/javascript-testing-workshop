@@ -1,8 +1,8 @@
 require('jest');
-const { EOL } = require('os');
+//const { EOL } = require('os');
 const cmd = require('./helpers/cmd');
-const nock = require('nock');
-const defaultOptions = require('./helpers/nock');
+//const nock = require('nock');
+//const defaultOptions = require('./helpers/nock');
 
 describe('env conf works', () => {
   test('it works', () => {
