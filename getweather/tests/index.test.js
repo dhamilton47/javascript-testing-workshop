@@ -1,6 +1,6 @@
 require('jest');
 const { EOL } = require('os');
-const cmd = require('./cmd');
+const cmd = require('./helpers/cmd');
 const nock = require('nock');
 const defaultOptions = require('./helpers/nock');
 
@@ -11,31 +11,30 @@ describe('env conf works', () => {
 });
 
 describe('The Weather CLI', () => {
-  test('returns a 7-day forecast', async () => {
-    // nock.recorder.rec();
-
-    nock.back.setMode('record');
+  test('test on return states.', async () => {
     
-    const { nockDone } = await nock.back(
-      'user-data.json',
-      defaultOptions,
-    );
+    //returning an error
+    
+    let response = await cmd.execute('../getweather/index.js', ['-c', 'nowhere-interesting']);
+    
+    let responseError = false;
 
-    const response = await cmd.execute(
-      '../getweather/index.js',
-      ['-c', 'Orlando']
-    );
-    console.log(response);
-    // const responseObj = JSON.parse(response);
+    if(response == '' || response == 'Error in the OpenCage API call.\n' || response == 'Error in the DarkSky API call.\n') {
+      responseError = !responseError;
+    }
 
-    expect(response).toEqual(
-      expect.objectContaining({
-        results: expect.any(Object),
-      }),
-    );
+    expect(responseError).toEqual(true);
 
-    nockDone();
-    nock.back.setMode('wild');
-    // nock.recorder.play();
+    // returning without an error
+    
+    response = await cmd.execute('../getweather/index.js', ['-c', 'Orlando,FL,USA']);
+    
+    responseError = false;
+
+    if(response == '' || response == 'Error in the OpenCage API call.\n' || response == 'Error in the DarkSky API call.\n') {
+      responseError = !responseError;
+    }
+
+    expect(responseError).toEqual(false);
   });
 })
