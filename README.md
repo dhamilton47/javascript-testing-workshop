@@ -1,4 +1,4 @@
-# js-testing-workshop
+# javascript-testing-workshop
 
 
 ### __Intro__
@@ -17,7 +17,7 @@ He presented a simple sketch of a project we would pursue to learn testing using
 
 As we had not finished the project by the end of the workshop, Phil challenged us to move the concept and development forward.
 
-### __Thoughts on Proceeding__
+### __State of the Union__
 
 _The OpenCage API_
 
@@ -35,14 +35,15 @@ A 200 HTTP response code from the OpenCage API can contain zero or more entries.
   </li>
 </ol>
 
-_The OpenCage API_
+_The DarkSky API_
 
-<li>
-  The DarkSky API requires latitude and longitude which we cull from the OpenCage response.  Need to make sure we form the API call correctly.
-</li>
-<li>
-  Is there a response from DarkSky and how do we handle it?  What do we mean when we say we want the weather at a location - Current or forecast, for how long of a period, etc.
-</li>
+The DarkSky API requires latitude and longitude which we cull from the OpenCage response.  Need to make sure we form the API call correctly.
 
+Is there a response from DarkSky and how do we handle it?  What do we mean when we say we want the weather at a location - Current or forecast, for how long of a period, etc.
 
 <hr/>
+
+Currently
+
+- Output only to CLI
+- Outputs both current and forecast weather
