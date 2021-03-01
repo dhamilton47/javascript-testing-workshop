@@ -19,31 +19,82 @@ if(!process.argv.slice(2).length) {
 // Application below
 
 const run = async city => {
+  let  coordinates, forecastDataObj;
 
   // get location coordinates
+
   try {
     const cityData = await getLocation(city, OPENCAGE_URL, OPENCAGE_KEY);
-    const cityDataObj = JSON.parse(cityData).results[0];
-    const { lat, lng } = cityDataObj.geometry;
-    console.log(lat, lng);
-    //return lat, lng;
+    coordinates = JSON.parse(cityData).results[0].geometry;
   } catch (e) {
     console.log('Error in the OpenCage API call.');
+    return;
   }
-  //let forecastDataObj;
+
   // get forecast data
-  /*
+  
   try {
-    const forecastData = await getWeather(lat, lng);
+    const forecastData = await getWeather(coordinates);
     forecastDataObj = JSON.parse(forecastData);
-    //return forecastDataObj;
   } catch (e) {
-    console.log('Error in the DarkSky API call.')
+    console.log('Error in the DarkSky API call.');
+    return;
   }
-  return forecastDataObj;
+
+  // Format results
+
+  // CLI
+
+  //  Current
+  
+  console.log(
+    'Current Time:',
+    format(
+      addSeconds(
+        new Date(1970, 0, 1-1, 12+2+5, 0, 0),
+        forecastDataObj.currently.time
+      ),
+      'h:mm bbb'
+    )
+  );
+  console.log('Todays Forecast:',forecastDataObj.currently.summary);
+  console.log('Current Temperature:',forecastDataObj.currently.temperature);
+  console.log('Icon:',forecastDataObj.currently.icon,'\n');
+
+  //  Daily
+
+  forecastDataObj.daily.data.forEach(element => {
+    console.log(
+      'Day:',
+      format(
+        addSeconds(
+          new Date(1970, 0, 1, 12+2, 0, 0),
+          element.time
+        ),
+        'MMMM dd, yyyy'
+      )
+    );
+    console.log('Weather:',element.summary);
+    console.log('Icon:',element.icon);
+    console.log('High:',element.temperatureHigh);
+    console.log('Low:',element.temperatureLow,'\n');
+  });
+
+  // Webpage
+
+  //  Current
+
+  //  Daily
+
+  // Acknowledgement
+
+  console.log('This application is powered by the OpenCage API and the Dark Sky API\n')
+  console.log('https://opencagedata.com/api')
+  console.log('https://darksky.net/dev\n\n')
+
+
 };
-*/
-};
+
 //if(program.city != '') {
 
 //forecastDataObj = run(program.city);
