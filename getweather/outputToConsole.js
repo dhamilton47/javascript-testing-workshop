@@ -13,8 +13,7 @@ function outputToConsole(forecastDataObj) {
     )
   );
   console.log('Todays Forecast:', forecastDataObj.currently.summary);
-  console.log('Current Temperature:', forecastDataObj.currently.temperature);
-  console.log('Icon:', forecastDataObj.currently.icon, '\n');
+  console.log('Current Temperature: %i', forecastDataObj.currently.temperature,'\n');
 
   //  Daily
   forecastDataObj.daily.data.forEach(element => {
@@ -29,9 +28,8 @@ function outputToConsole(forecastDataObj) {
       )
     );
     console.log('Weather:', element.summary);
-    console.log('Icon:', element.icon);
-    console.log('High:', element.temperatureHigh);
-    console.log('Low:', element.temperatureLow, '\n');
+    console.log('High: %i', element.temperatureHigh);
+    console.log('Low:  %i', element.temperatureLow, '\n');
   });
 
   // Acknowledgement
