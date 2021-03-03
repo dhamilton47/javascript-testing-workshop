@@ -53,9 +53,8 @@ const run = async city => {
 
 };
 
-//if(program.city != '') {
-
-//forecastDataObj = run(program.city);
-run(program.city);
+if(program.city != '') {
+  run(program.city);
+}
 
 
