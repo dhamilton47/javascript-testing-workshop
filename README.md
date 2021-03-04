@@ -41,9 +41,12 @@ The DarkSky API requires latitude and longitude which we cull from the OpenCage 
 
 Is there a response from DarkSky and how do we handle it?  What do we mean when we say we want the weather at a location - Current or forecast, for how long of a period, etc.
 
+_Output_
+
+Outputs current, forecast or both weather choices.
+
 <hr/>
 
 Currently
 
 - Output only to CLI
-- Outputs both current and forecast weather
