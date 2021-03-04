@@ -1,6 +1,6 @@
 {
   "name": "getweather",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -24,12 +24,13 @@
     "express": "^4.17.1",
     "promise": "^8.1.0",
     "request": "^2.88.2",
-    "request-promise": "^4.2.6"
+    "request-promise": "^4.2.6",
+    "terminal-link": "^2.1.1"
   },
   "devDependencies": {
     "concat-stream": "^2.0.0",
     "jest": "^26.6.3",
     "nock": "^11.9.1"
   },
-  "description": ""
+  "description": "Practice repository for testing and nodejs"
 }

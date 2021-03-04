@@ -1,0 +1,61 @@
+[
+    {
+        "scope": "https://api.darksky.net:443",
+        "method": "GET",
+        "path": "/forecast/fake/28.5421109,-81.3790304?exclude=daily,minutely,hourly,alerts,flags",
+        "body": "",
+        "status": 200,
+        "response": {
+            "latitude": 28.5421109,
+            "longitude": -81.3790304,
+            "timezone": "America/New_York",
+            "currently": {
+                "time": 1614762194,
+                "summary": "Overcast",
+                "icon": "cloudy",
+                "nearestStormDistance": 8,
+                "nearestStormBearing": 286,
+                "precipIntensity": 0,
+                "precipProbability": 0,
+                "temperature": 67.09,
+                "apparentTemperature": 68,
+                "dewPoint": 65.81,
+                "humidity": 0.96,
+                "pressure": 1012.5,
+                "windSpeed": 8.02,
+                "windGust": 20.47,
+                "windBearing": 204,
+                "cloudCover": 0.93,
+                "uvIndex": 0,
+                "visibility": 10,
+                "ozone": 268.3
+            },
+            "offset": -5
+        },
+        "rawHeaders": [
+            "Date",
+            "Wed, 03 Mar 2021 09:03:14 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "460",
+            "Connection",
+            "close",
+            "Strict-Transport-Security",
+            "max-age=31536000",
+            "X-Authentication-Time",
+            "227ms",
+            "X-Forecast-API-Calls",
+            "14",
+            "Cache-Control",
+            "max-age=60",
+            "Expires",
+            "Wed, 03 Mar 2021 09:04:14 +0000",
+            "X-Response-Time",
+            "12.131ms",
+            "Vary",
+            "Accept-Encoding"
+        ],
+        "responseIsBinary": false
+    }
+]
